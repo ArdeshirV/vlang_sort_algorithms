@@ -1,3 +1,5 @@
+import rand
+import v.time
 
 fn main() {
     println("The V Programming Language")
@@ -76,8 +78,8 @@ fn merge_sort(mut arr []int) {
         return
     }
     mid := len(arr) / 2
-    left := arr[:mid]
-    right := arr[mid:]
+    //left := arr[:mid]
+    //right := arr[mid:]
     merge_sort(left)
     merge_sort(right)
     merge(arr, left, right)

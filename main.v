@@ -24,3 +24,13 @@ fn create_array_with_random_elements(size int) []int {
    return array
 }
 
+fn clone_array(mut arr []int) []int {
+    cloned_array := [len(arr)]int{}
+
+    for i := 0; i < len(array); i++ {
+        cloned_array[i] = array[i]
+    }
+
+    return cloned_array
+}
+

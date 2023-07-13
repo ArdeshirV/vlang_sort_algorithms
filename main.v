@@ -106,3 +106,23 @@ fn merge(mut arr []int, left []int, right []int) {
     }
 }
 
+fn quick_sort(mut arr []int, low int, high int) {
+    if low < high {
+        pi := partition(arr, low, high)
+        quick_sort(arr, low, pi-1)
+        quick_sort(arr, pi+1, high)
+    }
+}
+fn partition(mut arr []int, low int, high int) int {
+    pivot := arr[high]
+    i := low - 1
+    for j := low; j <= high-1; j++ {
+        if arr[j] < pivot {
+            i++
+            arr.swap(i, j)
+        }
+    }
+    arr.swap(i+1, high)
+    return i + 1
+}
+

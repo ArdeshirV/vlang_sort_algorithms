@@ -34,3 +34,14 @@ fn clone_array(mut arr []int) []int {
     return cloned_array
 }
 
+fn bubble_sort(mut arr []int) {
+    n := len(arr)
+    for i := 0; i < n-1; i++ {
+        for j := 0; j < n-i-1; j++ {
+            if arr[j] > arr[j+1] {
+                arr.swap(j, j+1)
+            }
+        }
+    }
+}
+

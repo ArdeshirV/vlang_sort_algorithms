@@ -71,3 +71,38 @@ fn insertion_sort(mut arr []int) {
     }
 }
 
+fn merge_sort(mut arr []int) {
+    if len(arr) <= 1 {
+        return
+    }
+    mid := len(arr) / 2
+    left := arr[:mid]
+    right := arr[mid:]
+    merge_sort(left)
+    merge_sort(right)
+    merge(arr, left, right)
+}
+fn merge(mut arr []int, left []int, right []int) {
+    i, j, k := 0, 0, 0
+    for i < len(left) && j < len(right) {
+        if left[i] < right[j] {
+            arr[k] = left[i]
+            i++
+        } else {
+            arr[k] = right[j]
+            j++
+        }
+        k++
+    }
+    for i < len(left) {
+        arr[k] = left[i]
+        i++
+        k++
+    }
+    for j < len(right) {
+        arr[k] = right[j]
+        j++
+        k++
+    }
+}
+

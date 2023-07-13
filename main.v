@@ -14,3 +14,13 @@ fn evaluate_speed() {
     println('Execution time:', elapsed)
 }
 
+fn create_array_with_random_elements(size int) []int {
+	mut array := [size]int{}
+
+    for i := 0; i < len(array); i++ {
+        array[i] = rand.intn(size)
+    }
+
+   return array
+}
+
